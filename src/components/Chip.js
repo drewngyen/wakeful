@@ -11,16 +11,22 @@ export default class Chip extends Component {
         opacity: 1
       }
     };
+
     return (
-      <ChipStyle>
+      <ChipStyle hue={this.props.time}>
         <motion.div
+          whileHover={{
+            transition: { duration: 0.1, type: "spring" },
+            scale: 1.05
+          }}
+          whileTap={{ y: -5 }}
           initial="hidden"
           animate="visible"
           variants={chip}
           transition={{
             delay: this.props.delay,
-            x: { type: "inertia", stiffness: 100 },
-            default: { duration: 2 }
+            x: { type: "inertia", stiffness: 50 },
+            default: { duration: 1 }
           }}
         >
           {this.props.time}

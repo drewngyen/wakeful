@@ -25,6 +25,19 @@ const TimePickerStyles = styled.div`
     align-items: baseline;
     /* margin: 0 auto; */
   }
+  .calculate {
+    /* border: 3px solid rgba(37, 96, 159, 0.5); */
+    border: none;
+    /* outline: 2px red; */
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 13px;
+    background: rgba(37, 96, 159, 1);
+    /* background: black; */
+
+    color: white;
+    font-weight: 600;
+  }
   input[type="text"] {
     margin: 0.5rem;
     display: flex;

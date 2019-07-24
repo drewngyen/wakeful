@@ -53,7 +53,7 @@ export default class TimePicker extends Component {
             max="24:00"
             required
           /> */}
-          <input
+          <motion.input
             onChange={this.handleChangeHrs}
             type="text"
             pattern="[0-9]*"
@@ -62,9 +62,11 @@ export default class TimePicker extends Component {
             max="24"
             maxlength="2"
             aria-label="hour"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           />
           :
-          <input
+          <motion.input
             onChange={this.handleChangeMin}
             type="text"
             pattern="[0-9]*"
@@ -73,13 +75,18 @@ export default class TimePicker extends Component {
             max="60"
             maxlength="2"
             aria-label="minutes"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           />
           <div style={{ display: "flex", "flex-direction": "column" }}>
             {/* <input value="am" type="submit" />
             <input value="pm" type="submit" /> */}
           </div>
         </div>
-        <input
+        <motion.input
+          class="calculate"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           aria-label="calculate time"
           type="submit"
           value="Calculate"

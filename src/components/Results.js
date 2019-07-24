@@ -2,10 +2,8 @@ import React from "react";
 import * as tm from "../utils/sleep";
 import ResultStyles from "./styles/ResultStyles";
 import Chip from "./Chip";
-// import { motion } from "framer-motion";
 
 const Results = props => {
-  // render() {
   let times = tm.convertMinArrToUTC(
     tm.timeResultsInMinutes(tm.minutes(props.time, props.pm)),
     true,
@@ -19,7 +17,6 @@ const Results = props => {
       <div>{mapTimes}</div>
     </ResultStyles>
   );
-  // }
 };
 export default Results;
 // https://alligator.io/react/react-progressive-web-apps/

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
+import { motion } from "framer-motion";
 // import logic
 import * as tm from "../utils/sleep";
 // import components
@@ -29,6 +30,11 @@ const StyledPage = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
+  a {
+    margin-top: 0.5rem;
+    color: black;
+    text-decoration-line: none;
+  }
 `;
 
 const Page = () => {
@@ -45,6 +51,16 @@ const Page = () => {
         <Header />
         <TimePicker time={curTime} submit={updateTime} />
         <Results key={key} time={curTime} />
+        <motion.a
+          href="https://github.com/drewngyen/wakeful"
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.3 }
+          }}
+          whileTap={{ scale: 0.9 }}
+        >
+          github.com/drewngyen/wakeful
+        </motion.a>
       </StyledPage>
     </ThemeProvider>
   );

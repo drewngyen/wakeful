@@ -21,9 +21,10 @@ const ResultStyles = styled.div`
     border-radius: 20px;
     transition: 0.2s;
   }
+
   div:hover {
-    background: gray;
-    color: white;
+    /* background: gray; */
+    color: black;
   }
   .date {
     font-size: 1.4em;
