@@ -10,7 +10,9 @@ const ResultStyles = styled.div`
   /* align-items: center; */
   div {
     /* width: 4rem; */
-    background: lightsteelblue;
+    /* background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%); */
+    /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
+    background: linear-gradient(120deg, #e3ffe7 0%, #d9e7ff 100%);
     color: black;
     display: inline-block;
     padding: 0.5em 0.8em;
