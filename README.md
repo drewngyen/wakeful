@@ -13,8 +13,7 @@ As a PWA this app can be saved to the home screen and is designed to test new fe
 - [Styled Components](https://www.styled-components.com/)
 - [Framer](https://www.framer.com/api/motion)
 
----
-PRs are always welcome :)
+
 
 #### stretch features
 ---
@@ -22,4 +21,5 @@ PRs are always welcome :)
 - adding weather component to get daily forecast 
 - fixing bugs :P
 
-
+---
+PRs are always welcome :)
