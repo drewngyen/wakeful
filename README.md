@@ -7,19 +7,22 @@ As a PWA this app can be saved to the home screen and is designed to test new fe
 [demo it here](https://wakeful.netlify.com/)
 
 #### built with
+
 ---
 
 - [React](https://reactjs.org/)
 - [Styled Components](https://www.styled-components.com/)
 - [Framer](https://www.framer.com/api/motion)
 
-
-
 #### stretch features
+
 ---
+
+- adding page with saved calculations w/ indexedDB
 - using AWS lambda to make perform safe client-side API calls
-- adding weather component to get daily forecast 
+- adding weather component to get daily forecast
 - fixing bugs :P
 
 ---
+
 PRs are always welcome :)
