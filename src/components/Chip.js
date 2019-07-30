@@ -17,7 +17,7 @@ export default class Chip extends Component {
         <motion.div
           whileHover={{
             transition: { duration: 0.1, type: "spring" },
-            scale: 1.05
+            scale: 1.0
           }}
           whileTap={{ y: -5 }}
           initial="hidden"
@@ -25,7 +25,7 @@ export default class Chip extends Component {
           variants={chip}
           transition={{
             delay: this.props.delay,
-            x: { type: "inertia", stiffness: 50 },
+            x: { type: "spring", stiffness: 500 },
             default: { duration: 1 }
           }}
         >

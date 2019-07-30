@@ -1,10 +1,10 @@
 {
-  "short_name": "sleepytime",
-  "name": "SleepyTime - Helping you wake up better",
+  "short_name": "wakeful.",
+  "name": "wakeful. - finding optimal times to wake up to help you sleep up better",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64 32x32 24x24 16x16 96x96",
       "type": "image/x-icon"
     }
   ],

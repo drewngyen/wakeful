@@ -54,7 +54,7 @@ const Page = () => {
         <motion.a
           href="https://github.com/drewngyen/wakeful"
           whileHover={{
-            scale: 1.05,
+            scale: 1.2,
             transition: { duration: 0.3 }
           }}
           whileTap={{ scale: 0.9 }}

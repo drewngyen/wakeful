@@ -39,20 +39,14 @@ export default class TimePicker extends Component {
       hidden: { opacity: 0 },
       visible: { opacity: 1 }
     };
+    // TODO: Add type validation before submit
+    // TODO: Conditionally render input when type validated
     return (
       <TimePickerStyles>
         <motion.div initial="hidden" animate="visible" variants={variants}>
           <p>Enter your bedtime</p>
         </motion.div>
         <div class="time">
-          {/* <input
-            type="time"
-            id="appt"
-            name="appt"
-            min="00:00"
-            max="24:00"
-            required
-          /> */}
           <motion.input
             onChange={this.handleChangeHrs}
             type="text"
@@ -78,14 +72,15 @@ export default class TimePicker extends Component {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           />
-          <div style={{ display: "flex", "flex-direction": "column" }}>
-            {/* <input value="am" type="submit" />
-            <input value="pm" type="submit" /> */}
-          </div>
+          <div style={{ display: "flex", "flex-direction": "column" }} />
         </div>
+        {/* <div class="am-pm">
+          <button>AM</button>
+          <button>PM</button>
+        </div> */}
         <motion.input
           class="calculate"
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.9 }}
           aria-label="calculate time"
           type="submit"
@@ -99,7 +94,7 @@ export default class TimePicker extends Component {
         )}
         <motion.div initial="hidden" animate="visible" variants={variants}>
           <p className="secondary">
-            Feel well-rested when you wake up at these times
+            Optimal times to wake and feel well-rested
           </p>
         </motion.div>
       </TimePickerStyles>

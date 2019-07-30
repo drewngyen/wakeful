@@ -14,6 +14,12 @@ const TimePickerStyles = styled.div`
   p {
     font-size: 1.7rem;
   }
+  .am-pm {
+    margin: 0;
+    display: flex;
+    position: relative;
+    /* flex-direction: column; */
+  }
   .secondary {
     font-size: 1rem;
   }
@@ -27,16 +33,23 @@ const TimePickerStyles = styled.div`
   }
   .calculate {
     /* border: 3px solid rgba(37, 96, 159, 0.5); */
-    border: none;
+    /* border: none; */
     /* outline: 2px red; */
+    margin-top: 1em;
     font-size: 1rem;
-    padding: 0.5rem;
-    border-radius: 13px;
-    background: rgba(37, 96, 159, 1);
+    padding: 0.3rem;
+    border-radius: 6px;
+    border: 2px solid rgba(37, 96, 159, 1);
+    /* background: rgba(37, 96, 159, 1); */
     /* background: black; */
-
-    color: white;
+    outline: none;
+    color: rgba(37, 96, 159, 1);
     font-weight: 600;
+    transition: 200ms ease;
+  }
+  .calculate:hover {
+    color: white;
+    background: rgba(37, 96, 159, 1);
   }
   input[type="text"] {
     margin: 0.5rem;
