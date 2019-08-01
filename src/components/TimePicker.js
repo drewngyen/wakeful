@@ -6,9 +6,11 @@ import Submit from "./Submit";
 export default class TimePicker extends Component {
   constructor(props) {
     super(props);
-    let date = new Date();
-    let min = date.getMinutes();
-    let hours = date.getHours();
+    // let date = new Date();
+    let min = 9;
+    // let min = date.getMinutes();
+    let hours = 1;
+    // let hours = date.getHours();
     this.state = {
       hours,
       min,
@@ -34,6 +36,13 @@ export default class TimePicker extends Component {
     );
     this.setState({ isSubmitted: true });
   }
+  // changing focus
+  changeFocusMax(e, nextID) {
+    if (e.length === 2) {
+      document.getElementById(nextID).focus();
+    }
+  }
+
   render() {
     const variants = {
       hidden: { opacity: 0 },
@@ -48,7 +57,10 @@ export default class TimePicker extends Component {
         </motion.div>
         <div class="time">
           <motion.input
-            onChange={this.handleChangeHrs}
+            onChange={e => {
+              this.handleChangeHrs(e);
+              this.changeFocusMax(e.target.value, "min");
+            }}
             type="text"
             pattern="[0-9]*"
             placeholder={this.state.hours}
@@ -61,6 +73,7 @@ export default class TimePicker extends Component {
           />
           :
           <motion.input
+            id="min"
             onChange={this.handleChangeMin}
             type="text"
             pattern="[0-9]*"
