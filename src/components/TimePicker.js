@@ -6,14 +6,14 @@ import Submit from "./Submit";
 export default class TimePicker extends Component {
   constructor(props) {
     super(props);
-    // let date = new Date();
-    let min = 9;
-    // let min = date.getMinutes();
-    let hours = 1;
-    // let hours = date.getHours();
+    let date = new Date();
+    let min = date.getMinutes();
+    let mins = min.toString().length === 1 ? `0${min}` : min;
+    let hour = date.getHours();
+    let hours = hour.toString().length === 1 ? `0${hour}` : hour;
     this.state = {
       hours,
-      min,
+      mins,
       inHours: null,
       inMins: null,
       isSubmitted: false
@@ -77,7 +77,7 @@ export default class TimePicker extends Component {
             onChange={this.handleChangeMin}
             type="text"
             pattern="[0-9]*"
-            placeholder={this.state.min}
+            placeholder={this.state.mins}
             min="00"
             max="60"
             maxlength="2"

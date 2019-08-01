@@ -37,8 +37,8 @@ const TimePickerStyles = styled.div`
     /* outline: 2px red; */
     margin-top: 1em;
     font-size: 1rem;
-    padding: 0.3rem;
-    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 1rem;
     border: 2px solid rgba(37, 96, 159, 1);
     /* background: rgba(37, 96, 159, 1); */
     /* background: black; */
@@ -58,7 +58,7 @@ const TimePickerStyles = styled.div`
     border: none;
     outline: none;
     color: black;
-    padding: 0.4em 0.3em;
+    padding: 0.5em 0.4em;
     /* padding: 0px; */
     font-size: 3rem;
     font-family: helvetica;
