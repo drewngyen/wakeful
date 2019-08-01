@@ -1,3 +1,10 @@
+/* from iPhone 6 and up */
+@media only screen and (max-width: 500px) {
+  p {
+    margin: 0.6rem !important;
+  }
+}
+
 .App {
   text-align: center;
   align-content: center;

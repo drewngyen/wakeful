@@ -41,7 +41,7 @@ const TimePickerStyles = styled.div`
     border-radius: 1rem;
     border: 2px solid rgba(37, 96, 159, 1);
     /* background: rgba(37, 96, 159, 1); */
-    /* background: black; */
+    background: white;
     outline: none;
     color: rgba(37, 96, 159, 1);
     font-weight: 600;

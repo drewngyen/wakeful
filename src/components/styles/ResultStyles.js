@@ -10,13 +10,11 @@ const ResultStyles = styled.div`
   div {
     padding: 0.5em;
     display: flex;
-    /* background: red; */
     flex-wrap: wrap;
-
     justify-content: center;
   }
-  .date {
-    font-size: 1.4em;
+  @media only screen and (max-width: 500px) {
+    padding: 0.3rem;
   }
 `;
 

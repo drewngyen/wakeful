@@ -21,8 +21,9 @@ const ResultStyles = styled.div`
     /* margin: 0 auto; */
     border-radius: 20px;
   }
-  .date {
-    font-size: 1.4em;
+  @media only screen and (max-width: 500px) {
+    /* padding: 0.3rem; */
+    font-size: 0.9rem;
   }
 `;
 
