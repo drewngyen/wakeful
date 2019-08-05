@@ -12,7 +12,6 @@ const Results = props => {
   const mapTimes = times.map((time, index) => {
     return <Chip time={time} delay={index * 0.2} />;
   });
-  // console.log(times);
   if (times[0] !== "NaN:NaN am") {
     return (
       <ResultStyles>

@@ -51,6 +51,11 @@ const TimePickerStyles = styled.div`
     color: white;
     background: rgba(37, 96, 159, 1);
   }
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
   input[type="text"] {
     margin: 0.5rem;
     display: flex;

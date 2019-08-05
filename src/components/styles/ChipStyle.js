@@ -7,24 +7,16 @@ const ResultStyles = styled.div`
   .hidden {
     display: none;
   }
-  /* align-items: center; */
   div {
-    /* width: 4rem; */
-    /* background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%); */
-    /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
-    /* background: linear-gradient(180deg, #4b6cb7 0%, #182848 100%); */
     background: ${props =>
       props.bgColor || "linear-gradient(90deg, #4b6cb7 0%, #182848 100%)"};
     color: white;
     font-weight: 600;
     display: inline-block;
     padding: 0.5em 0.8em;
-    /* width: 100%; */
-    /* margin: 0 auto; */
     border-radius: 20px;
   }
   @media only screen and (max-width: 360px) {
-    /* padding: 0.3rem; */
     div {
       font-size: 0.9rem;
     }
