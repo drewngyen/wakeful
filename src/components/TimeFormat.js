@@ -1,9 +1,10 @@
 import React from "react";
 import TimeFormatStyles from "./styles/TimeFormatStyles";
+import { motion } from "framer-motion";
 
 const TimeFormat = props => {
   const format = props.format;
-  console.log(format);
+
   var military = document.getElementById("mil");
   var pmBtn = document.getElementById("pm");
   if (format) {
@@ -16,9 +17,18 @@ const TimeFormat = props => {
     m24.classList.add("active");
     pm.classList.remove("active");
   }
+  var hide = "none";
+  console.log(`props input: ${props.input}`);
+  if (props.input) {
+    hide = "flex";
+  }
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
   return (
-    <TimeFormatStyles>
-      <div>
+    <TimeFormatStyles hidden={hide}>
+      <motion.div initial="hidden" animate="visible" variants={variants}>
         <button
           id="mil"
           className="active"
@@ -32,7 +42,7 @@ const TimeFormat = props => {
         <button id="pm" onClick={props.submit}>
           PM
         </button>
-      </div>
+      </motion.div>
     </TimeFormatStyles>
   );
 };

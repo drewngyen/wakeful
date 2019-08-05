@@ -18,7 +18,8 @@ export default class TimePicker extends Component {
       inHours: hours,
       inMins: mins,
       isSubmitted: false,
-      pm: false
+      pm: false,
+      input: false
     };
 
     // this.handleChangeHrs = this.handleChangeHrs.bind(this);
@@ -86,6 +87,7 @@ export default class TimePicker extends Component {
     if (e.length === 2) {
       document.getElementById(nextID).focus();
     }
+    this.setState({ input: true });
   }
 
   render() {
@@ -140,6 +142,7 @@ export default class TimePicker extends Component {
           format={this.state.pm}
           default={this.use24Format}
           submit={this.usePMFormat}
+          input={this.state.input}
         />
 
         <motion.input

@@ -10,7 +10,7 @@ const Results = props => {
     tm.getTime()
   );
   const mapTimes = times.map((time, index) => {
-    return <Chip time={time} delay={index * 0.2} />;
+    return <Chip key={index} time={time} delay={index * 0.2} />;
   });
   if (times[0] !== "NaN:NaN am") {
     return (

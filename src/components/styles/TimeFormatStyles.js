@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const TimeFormatStyles = styled.div`
+  display: ${props => props.hidden || "flex"};
+  transition: 200ms ease;
   div {
     display: flex;
   }

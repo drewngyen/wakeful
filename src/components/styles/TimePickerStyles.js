@@ -15,6 +15,9 @@ const TimePickerStyles = styled.div`
     font-size: 1.7rem;
     font-weight: 300;
   }
+  .hidden {
+    display: none;
+  }
   .am-pm {
     margin: 0;
     display: flex;
