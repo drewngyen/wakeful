@@ -135,15 +135,13 @@ export default class TimePicker extends Component {
           />
           <div style={{ display: "flex", flexDirection: "column" }} />
         </div>
-        {/* <div class="am-pm">
-          <button>AM</button>
-          <button>PM</button>
-        </div> */}
+
         <TimeFormat
           format={this.state.pm}
           default={this.use24Format}
           submit={this.usePMFormat}
         />
+
         <motion.input
           id="calc"
           className="calculate"

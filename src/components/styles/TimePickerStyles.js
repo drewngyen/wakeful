@@ -13,6 +13,7 @@ const TimePickerStyles = styled.div`
   }
   p {
     font-size: 1.7rem;
+    font-weight: 300;
   }
   .am-pm {
     margin: 0;
