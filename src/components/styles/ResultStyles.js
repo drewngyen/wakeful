@@ -13,7 +13,7 @@ const ResultStyles = styled.div`
     flex-wrap: wrap;
     justify-content: center;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 360px) {
     padding: 0.3rem;
   }
 `;

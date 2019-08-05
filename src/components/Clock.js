@@ -7,12 +7,12 @@ export default class Clock extends Component {
     return (
       <ClockStyles>
         <div>
-          <ClockLive format={"h:mm a"} ticking={true} class="time" />
+          <ClockLive format={"h:mm a"} ticking={true} className="time" />
           <ClockLive
             format={"dddd, MMMM Do"}
             ticking={true}
             timezone={"US/Pacific"}
-            class="date"
+            className="date"
           />
         </div>
       </ClockStyles>

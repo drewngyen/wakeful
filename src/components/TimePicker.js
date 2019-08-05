@@ -14,8 +14,8 @@ export default class TimePicker extends Component {
     this.state = {
       hours,
       mins,
-      inHours: null,
-      inMins: null,
+      inHours: hours,
+      inMins: mins,
       isSubmitted: false
     };
     this.handleChangeHrs = this.handleChangeHrs.bind(this);
@@ -24,11 +24,28 @@ export default class TimePicker extends Component {
   }
 
   handleChangeHrs(event) {
-    this.setState({ inHours: event.target.value });
+    if (event) {
+      let hour = 24;
+      if (event.target.value < 24) {
+        hour = event.target.value;
+      }
+      this.setState({ inHours: hour });
+    } else {
+      this.setState({ inHours: this.state.hours });
+    }
   }
+
   handleChangeMin(event) {
-    this.setState({ inMins: event.target.value });
+    console.log(event.target.value);
+    if (event) {
+      let min = 59;
+      if (event.target.value < 60) min = event.target.value;
+      this.setState({ inMins: min });
+    } else {
+      this.setState({ inMins: this.state.mins });
+    }
   }
+
   handleSubmit() {
     console.log(
       `time submitted: ${this.state.inHours} : ${this.state.inMins}`,
@@ -55,7 +72,7 @@ export default class TimePicker extends Component {
         <motion.div initial="hidden" animate="visible" variants={variants}>
           <p>Enter your bedtime</p>
         </motion.div>
-        <div class="time">
+        <div className="time">
           <motion.input
             onChange={e => {
               this.handleChangeHrs(e);
@@ -66,7 +83,7 @@ export default class TimePicker extends Component {
             placeholder={this.state.hours}
             min="0"
             max="24"
-            maxlength="2"
+            maxLength="2"
             aria-label="hour"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -80,19 +97,19 @@ export default class TimePicker extends Component {
             placeholder={this.state.mins}
             min="00"
             max="60"
-            maxlength="2"
+            maxLength="2"
             aria-label="minutes"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           />
-          <div style={{ display: "flex", "flex-direction": "column" }} />
+          <div style={{ display: "flex", flexDirection: "column" }} />
         </div>
         {/* <div class="am-pm">
           <button>AM</button>
           <button>PM</button>
         </div> */}
         <motion.input
-          class="calculate"
+          className="calculate"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.9 }}
           aria-label="calculate time"

@@ -40,10 +40,12 @@ export function timeResultsInMinutes(time) {
 
 export function convertMinArrToUTC(arr, pm, wake) {
   let wakeTimeMins = minutes(wake);
+  console.log(wakeTimeMins);
   wakeTimeMins = wakeTimeMins[0] + wakeTimeMins[1];
   let n = arr.length;
   let result = [];
   for (let i = 0; i < n; i++) {
+    console.log("from algo: ", arr[i]);
     let hour =
       Math.floor(arr[i] / 60) === 0
         ? 12
@@ -54,9 +56,10 @@ export function convertMinArrToUTC(arr, pm, wake) {
         : Math.floor(arr[i] / 60);
     let minMod = pm ? arr[i] % 60 : arr[i] % 60;
     let min = minMod.toString().length === 1 ? "0" + minMod.toString() : minMod;
-    if (arr[i] > wakeTimeMins) {
+    console.log(`arr[i] = ${arr[i]} wake: ` + wakeTimeMins);
+    if (arr[i] > 719) {
       result.push(timeString(hour, min) + ` pm`);
-      continue;
+      // continue;
     } else {
       result.push(timeString(hour, min) + ` am`);
     }

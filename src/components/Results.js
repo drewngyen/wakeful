@@ -12,11 +12,20 @@ const Results = props => {
   const mapTimes = times.map((time, index) => {
     return <Chip time={time} delay={index * 0.2} />;
   });
-  return (
-    <ResultStyles>
-      <div>{mapTimes}</div>
-    </ResultStyles>
-  );
+  // console.log(times);
+  if (times[0] !== "NaN:NaN am") {
+    return (
+      <ResultStyles>
+        <div>{mapTimes}</div>
+      </ResultStyles>
+    );
+  } else {
+    return (
+      <ResultStyles>
+        <Chip time="Invalid time" />
+      </ResultStyles>
+    );
+  }
 };
 export default Results;
 // https://alligator.io/react/react-progressive-web-apps/

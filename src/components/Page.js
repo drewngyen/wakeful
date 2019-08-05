@@ -9,7 +9,6 @@ import TimePicker from "./TimePicker";
 import Results from "./Results";
 
 // logic
-
 const theme = {
   red: "#FF0000",
   black: "#393939",
@@ -67,41 +66,3 @@ const Page = () => {
 };
 
 export default Page;
-/*
-export default class Page extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pm: false,
-      curTime: tm.getTime(),
-      curMins: tm.minutes(tm.getTime(), this.pm),
-      curMinArr: tm.timeResultsInMinutes(tm.minutes(tm.getTime(), this.pm)),
-      inTime: null
-    };
-    this.updateTime = this.updateTime.bind(this);
-  }
-
-  updateTime(time) {
-    this.setState({
-      curTime: time
-    });
-    console.log(
-      `updateTime invoked! state: { ${this.state.inTime} time: ${time}}`
-    );
-  }
-  render() {
-    // wrapping theme provider and react context api
-    return (
-      <div>
-        <ThemeProvider theme={theme}>
-          <StyledPage>
-            <Header />
-            <TimePicker time={this.state.curTime} submit={this.updateTime} />
-            <Results time={this.state.curTime} />
-          </StyledPage>
-        </ThemeProvider>
-      </div>
-    );
-  }
-}
-*/
