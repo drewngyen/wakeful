@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TimePickerStyles from "./styles/TimePickerStyles";
 import { motion } from "framer-motion";
+import TimeFormat from "./TimeFormat";
 import Submit from "./Submit";
 
 export default class TimePicker extends Component {
@@ -16,13 +17,38 @@ export default class TimePicker extends Component {
       mins,
       inHours: hours,
       inMins: mins,
-      isSubmitted: false
+      isSubmitted: false,
+      pm: false
     };
-    this.handleChangeHrs = this.handleChangeHrs.bind(this);
-    this.handleChangeMin = this.handleChangeMin.bind(this);
+
+    // this.handleChangeHrs = this.handleChangeHrs.bind(this);
+    // this.handleChangeMin = this.handleChangeMin.bind(this);
+    // only need to bind when passing props down to child
+    this.usePMFormat = this.usePMFormat.bind(this);
+    this.use24Format = this.use24Format.bind(this);
+    // for testing
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  usePMFormat() {
+    this.setState({
+      inHours: parseInt(this.state.inHours) + 12,
+      pm: true
+    });
+  }
+
+  use24Format() {
+    if (this.state.pm) {
+      this.setState({
+        inHours: parseInt(this.state.inHours) - 12,
+        pm: false
+      });
+    } else {
+      this.setState({
+        pm: false
+      });
+    }
+  }
   handleChangeHrs(event) {
     if (event) {
       let hour = 24;
@@ -30,6 +56,8 @@ export default class TimePicker extends Component {
         hour = event.target.value;
       }
       this.setState({ inHours: hour });
+    } else if (this.state.pm) {
+      this.setState({ inHours: this.state.hours + 12 });
     } else {
       this.setState({ inHours: this.state.hours });
     }
@@ -45,7 +73,7 @@ export default class TimePicker extends Component {
       this.setState({ inMins: this.state.mins });
     }
   }
-
+  // designed for tests
   handleSubmit() {
     console.log(
       `time submitted: ${this.state.inHours} : ${this.state.inMins}`,
@@ -78,7 +106,7 @@ export default class TimePicker extends Component {
               this.handleChangeHrs(e);
               this.changeFocusMax(e.target.value, "min");
             }}
-            type="text"
+            type="number"
             pattern="[0-9]*"
             placeholder={this.state.hours}
             min="0"
@@ -91,8 +119,11 @@ export default class TimePicker extends Component {
           :
           <motion.input
             id="min"
-            onChange={this.handleChangeMin}
-            type="text"
+            onChange={e => {
+              this.handleChangeMin(e);
+              this.changeFocusMax(e.target.value, "calc");
+            }}
+            type="number"
             pattern="[0-9]*"
             placeholder={this.state.mins}
             min="00"
@@ -108,7 +139,13 @@ export default class TimePicker extends Component {
           <button>AM</button>
           <button>PM</button>
         </div> */}
+        <TimeFormat
+          format={this.state.pm}
+          default={this.use24Format}
+          submit={this.usePMFormat}
+        />
         <motion.input
+          id="calc"
           className="calculate"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.9 }}

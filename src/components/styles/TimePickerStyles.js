@@ -56,7 +56,7 @@ const TimePickerStyles = styled.div`
     -moz-appearance: none;
     appearance: none;
   }
-  input[type="text"] {
+  input[type="number"] {
     margin: 0.5rem;
     display: flex;
     /* align-items: center; */
@@ -70,6 +70,14 @@ const TimePickerStyles = styled.div`
     width: 3.5rem;
     border-radius: 15%;
     background-color: #f2f4f5;
+  }
+  input[type="button"],
+  button,
+  input[type="submit"],
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    /* margin: 0; */
   }
   input[type="time"] {
     margin-top: 1rem;
