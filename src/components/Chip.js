@@ -29,7 +29,9 @@ const Chip = props => {
       hue = "linear-gradient(130deg, #d53369 0%, #daae51 100%)";
   }
   if (time.search("pm") > 0) {
-    if (digit === 12) hue = "linear-gradient(130deg, #d53369 0%, #daae51 100%)";
+    if (digit === 12)
+      hue =
+        "linear-gradient(90deg, rgba(19,15,88,1) 0%, rgba(22,51,73,1) 100%)";
     else if (digit <= 3)
       hue = "linear-gradient(130deg, #d53369 0%, #daae51 100%)";
     else if (digit > 3 && digit <= 7)
