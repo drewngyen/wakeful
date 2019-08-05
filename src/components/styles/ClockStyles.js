@@ -6,7 +6,7 @@ const ClockStyles = styled.div`
     flex-direction: column;
     font-size: 4em;
     align-items: center;
-    color: white;
+    color: black;
   }
   .date {
     font-size: 1.4em;
