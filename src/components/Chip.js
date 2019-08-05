@@ -1,7 +1,6 @@
 import React from "react";
 import ChipStyle from "./styles/ChipStyle";
 import { motion } from "framer-motion";
-import styled from "styled-components";
 
 const Chip = props => {
   const chip = {
@@ -12,33 +11,28 @@ const Chip = props => {
     }
   };
 
+  var colors = {
+    darkSky:
+      "linear-gradient(90deg, rgba(19,15,88,1) 0%, rgba(22,51,73,1) 100%)",
+    dawn:
+      "linear-gradient(180deg, rgba(89,9,121,1) 0%, rgba(58,107,143,1) 100%)",
+    sunrise: "linear-gradient(130deg, #d53369 0%, #daae51 100%)",
+    sunset:
+      "linear-gradient(90deg, rgba(214,83,110,1) 0%, rgba(63,94,251,1) 100%)"
+  };
+
   let hue;
   let time = props.time;
   let digit = parseInt(time);
   if (time.search("am") > 0) {
-    if (digit === 12)
-      hue =
-        "linear-gradient(90deg, rgba(19,15,88,1) 0%, rgba(22,51,73,1) 100%)";
-    else if (digit < 5)
-      hue =
-        "linear-gradient(180deg, rgba(19,15,88,1) 0%, rgba(22,51,73,1) 100%)";
-    else if (digit >= 5 && digit < 7)
-      hue =
-        "linear-gradient(180deg, rgba(89,9,121,1) 0%, rgba(58,107,143,1) 100%)";
-    else if (digit >= 7)
-      hue = "linear-gradient(130deg, #d53369 0%, #daae51 100%)";
+    if (digit >= 12 || digit < 5) hue = colors.darkSky;
+    else if (digit >= 5 && digit < 7) hue = colors.dawn;
+    else if (digit >= 7) hue = colors.sunrise;
   }
   if (time.search("pm") > 0) {
-    if (digit === 12)
-      hue =
-        "linear-gradient(90deg, rgba(19,15,88,1) 0%, rgba(22,51,73,1) 100%)";
-    else if (digit <= 3)
-      hue = "linear-gradient(130deg, #d53369 0%, #daae51 100%)";
-    else if (digit > 3 && digit <= 7)
-      hue =
-        "linear-gradient(90deg, rgba(214,83,110,1) 0%, rgba(63,94,251,1) 100%)";
+    if (digit >= 12 || digit <= 3) hue = colors.sunrise;
+    else if (digit > 3 && digit <= 7) hue = colors.sunset;
   }
-  console.log(parseInt(props.time), props.time.search("am"));
 
   return (
     <ChipStyle bgColor={hue}>
